@@ -2,7 +2,7 @@ import Dashboard from './pages/dashboard/Dashboard'
 
 function App() {
   return (
-    <main>
+    <main className='w-screen h-full'>
       <Dashboard />
     </main>
   )

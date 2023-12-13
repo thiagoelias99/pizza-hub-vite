@@ -3,7 +3,7 @@ import Header from '../../components/Header/Header'
 
 const Dashboard = () => {
   return (
-    <section>
+    <section className='w-screen h-screen'>
       <Header />
       <SideBar />
     </section>
