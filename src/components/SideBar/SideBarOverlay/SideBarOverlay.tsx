@@ -1,6 +1,13 @@
+import { useSideBarState } from '@/hooks/useSideBarState'
+
 const SideBarOverlay = () => {
+    const { sideBarStateValue, toggleSideBarState } = useSideBarState()
+
     return (
-        <div className='w-screen h-screen bg-black/40 fixed top-0 z-40'></div>
+        <div className={`${sideBarStateValue ? 'w-full' : 'w-0'} h-full bg-black/40 fixed top-0 z-30`}
+            onClick={() => toggleSideBarState(false)}
+        >
+        </div>
     )
 }
 
