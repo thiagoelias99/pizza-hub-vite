@@ -1,9 +1,9 @@
-import Dashboard from './pages/dashboard/Dashboard'
+import AppRouter from './routes/AppRouter'
 
 function App() {
   return (
     <main className='w-screen h-full'>
-      <Dashboard />
+      <AppRouter />
     </main>
   )
 }
