@@ -6,7 +6,7 @@ const SideBarContent = () => {
     return (
         <div>
             <SideBarItem text='Dashboard' Icon={LayoutDashboard} path='/' />
-            <SideBarItem text='Ingredientes' Icon={ShoppingBasket} path='ingredientes' />
+            <SideBarItem text='Produtos' Icon={ShoppingBasket} path='produtos' />
         </div>
     )
 }

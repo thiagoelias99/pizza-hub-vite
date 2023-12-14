@@ -1,9 +1,12 @@
+import QueryContext from './client/rquery/QueryContext'
 import AppRouter from './routes/AppRouter'
 
 function App() {
   return (
     <main className='w-screen h-full'>
-      <AppRouter />
+      <QueryContext>
+        <AppRouter />
+      </QueryContext>
     </main>
   )
 }
