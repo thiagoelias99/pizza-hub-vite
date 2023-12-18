@@ -1,13 +1,14 @@
+import { Image } from 'lucide-react'
+import { NavigationTabProps } from './NavigationTabProps'
 
-
-
-import { Apple } from 'lucide-react';
-
-const NavigationTab = () => {
+const NavigationTab = ({ label = "label", Icon = Image, selected = false }: NavigationTabProps) => {
   return (
-    <div className='flex flex-col justify-center items-center bg-secondary'>
-        <Apple className='w-6 h-6 stroke-secondary-foreground' />
-        <p className='text-secondary-foreground text-sm'>Apple</p>
+    <div className='flex flex-col justify-center items-center bg-primary'>
+      <Icon className='w-6 h-6 stroke-primary-foreground' />
+      <p className='text-primary-foreground text-base font-bold'>{label}</p>
+
+      <div className={`w-2/3 h-1 ${selected && "bg-primary-foreground"} rounded`}></div>
+
     </div>
   )
 }
