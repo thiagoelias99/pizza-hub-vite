@@ -6,10 +6,12 @@ import { useUnits } from '@/hooks/api/useUnits'
 import { useBottomNavigationState } from '@/hooks/useBottomNavigationState'
 import { useEffect } from 'react'
 import { useFab } from '@/hooks/useFab'
+import { useDialog } from '@/hooks/useDialog'
 
 const Units = () => {
     const { units, isLoading } = useUnits()
-    const {setFab} = useFab()
+    const { setFab } = useFab()
+    const { open, setContent } = useDialog()
     const { setOptions } = useBottomNavigationState()
 
     useEffect(() => {
@@ -25,16 +27,20 @@ const Units = () => {
                 path: '/unidades',
                 selected: true
             },
-        ]),
+        ])
         setFab({
             visible: true,
             onClick: handleClick
         })
+        setContent((
+            <div className='bg-white w-full h-72'>
+                <h1>Adicionar unidade</h1>
+            </div>
+        ))
     }, [])
 
-    function handleClick() {
-        console.log('clicou em unidades')
-      }
+
+    const handleClick = () => open()
 
     return (
         <div className='flex flex-col justify-start items-center w-full p-4'>

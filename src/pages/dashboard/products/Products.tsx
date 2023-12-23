@@ -6,10 +6,12 @@ import { useProducts } from "@/hooks/api/useProducts"
 import { useBottomNavigationState } from '@/hooks/useBottomNavigationState'
 import { useEffect } from 'react'
 import { useFab } from '@/hooks/useFab'
+import { useDialog } from '@/hooks/useDialog'
 
 const Products = () => {
   const { products, isLoading } = useProducts()
   const { setFab } = useFab()
+  const { open, setContent } = useDialog()
   const { setOptions } = useBottomNavigationState()
 
   useEffect(() => {
@@ -30,11 +32,14 @@ const Products = () => {
       visible: true,
       onClick: handleClick
     })
+    setContent((
+      <div className='bg-white w-full h-72'>
+        <h1>Adicionar produto</h1>
+      </div>
+    ))
   }, [])
 
-  function handleClick() {
-    console.log('clicou em produtos')
-  }
+  const handleClick = () => open()
 
   return (
     <div className='flex flex-col justify-start items-center w-full p-4'>

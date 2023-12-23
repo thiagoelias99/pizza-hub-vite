@@ -1,4 +1,5 @@
 import BottomNavigation from '@/components/BottomNavigation/BottomNavigation'
+import DialogContainer from '@/components/Dialogs/DialogContainer'
 import FloatingActionButton from '@/components/FloatingActionButton/FloatingActionButton'
 import Header from '@/components/Header/Header'
 import SideBar from '@/components/SideBar/SideBar'
@@ -14,6 +15,7 @@ const DashboardTemplate = () => {
             </div>
             <BottomNavigation />
             <FloatingActionButton />
+            <DialogContainer />
         </section>
     )
 }
