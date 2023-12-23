@@ -16,6 +16,7 @@ const Products = () => {
         label: 'Produtos',
         Icon: ShoppingBasket,
         path: '/produtos',
+        selected: true
       },
       {
         label: 'Unidades',
