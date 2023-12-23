@@ -1,4 +1,5 @@
 import BottomNavigation from '@/components/BottomNavigation/BottomNavigation'
+import FloatingActionButton from '@/components/FloatingActionButton/FloatingActionButton'
 import Header from '@/components/Header/Header'
 import SideBar from '@/components/SideBar/SideBar'
 import { Outlet } from 'react-router-dom'
@@ -12,6 +13,7 @@ const DashboardTemplate = () => {
                 <Outlet />
             </div>
             <BottomNavigation />
+            <FloatingActionButton />
         </section>
     )
 }

@@ -5,9 +5,11 @@ import Header1 from '@/components/Headers/Header1/Header1'
 import { useProducts } from "@/hooks/api/useProducts"
 import { useBottomNavigationState } from '@/hooks/useBottomNavigationState'
 import { useEffect } from 'react'
+import { useFab } from '@/hooks/useFab'
 
 const Products = () => {
   const { products, isLoading } = useProducts()
+  const { setFab } = useFab()
   const { setOptions } = useBottomNavigationState()
 
   useEffect(() => {
@@ -24,7 +26,15 @@ const Products = () => {
         path: '/unidades',
       },
     ])
+    setFab({
+      visible: true,
+      onClick: handleClick
+    })
   }, [])
+
+  function handleClick() {
+    console.log('clicou em produtos')
+  }
 
   return (
     <div className='flex flex-col justify-start items-center w-full p-4'>
