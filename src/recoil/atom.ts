@@ -1,6 +1,7 @@
 import { NavigationTabProps } from '@/components/BottomNavigation/NavigationTab/NavigationTabProps'
 import { DialogContainerProps } from '@/components/Dialogs/DialogContainerProps'
 import { floatingActionButtonProps } from '@/components/FloatingActionButton/FloatingActionButtonProps'
+import { ToastProps } from '@/components/Toast/ToastProps'
 import { atom } from "recoil"
 
 export const sideBarState = atom<boolean>({
@@ -22,8 +23,16 @@ export const fabOptions = atom<floatingActionButtonProps>({
 
 export const dialogOptions = atom<DialogContainerProps>({
     key: 'dialogOptions',
-    default:{
+    default: {
         open: false,
-        coco: null
+        child: null
+    }
+})
+
+export const toastOptions = atom<ToastProps>({
+    key: 'toastOptions',
+    default: {
+        message: '',
+        show: false
     }
 })
