@@ -7,6 +7,7 @@ import { useBottomNavigationState } from '@/hooks/useBottomNavigationState'
 import { useEffect } from 'react'
 import { useFab } from '@/hooks/useFab'
 import { useDialog } from '@/hooks/useDialog'
+import ProductForm from './ProductForm'
 
 const Products = () => {
   const { products, isLoading } = useProducts()
@@ -32,11 +33,7 @@ const Products = () => {
       visible: true,
       onClick: handleClick
     })
-    setContent((
-      <div className='bg-white w-full h-72'>
-        <h1>Adicionar produto</h1>
-      </div>
-    ))
+    setContent((<ProductForm />))
   }, [])
 
   const handleClick = () => open()
